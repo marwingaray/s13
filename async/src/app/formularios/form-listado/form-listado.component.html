@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>DNI</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Fecha nac.</th>
+            <th>Sueldo</th>
+            <th>Comision</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of input_datos; let i= index " >
+            <td>{{i + 1}}</td>
+            <td>{{item.Dni}}</td>
+            <td>{{item.Nombres | uppercase}}</td>
+            <td>{{item.Apellidos | titlecase}}</td>
+            <td>{{item.FechaNac | date: 'longDate':'GMT-5'}}</td>
+            <td>{{item.Sueldo | currency: 'EUR'}}</td>
+            <td>{{item.Comision | percent: '2.2'}}</td>
+        </tr>
+    </tbody>
+</table>
